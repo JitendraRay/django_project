@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Add Student</title>
+</head>
+<body>
+ {% include 'std/navbar.html'  %} 
+    <h1 class="text-center my-3">Add New Stundets</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card bg-info">
+                    <div class="card-body">
+                        <form action="add-std" method="POST">
+                            {% csrf_token %}
+                           <div class="md-3">
+                            <label for="roll">Roll No</label>
+                            <input type="text" name="std_roll" id="roll" class="form-control" placeholder="Enetr your roll" required>
+                           </div>
+                           <div class="md-3">
+                            <label for="name">Name</label>
+                            <input type="text" name="std_name" id="name" class="form-control" placeholder="Enetr your name" required>
+                           </div>
+                           <div class="md-3">
+                            <label for="email">Email</label>
+                            <input type="email" name="std_email" id="email" class="form-control" placeholder="Enetr your email" required>
+                           </div>
+                           <div class="md-3">
+                            <label for="contact">Contact</label>
+                            <input type="text" name="std_contact" id="contact" class="form-control" placeholder="Enetr your contact" required>
+                           </div>
+                           <div class="md-3">
+                            <label for="address">Address</label>
+                            <textarea name="std_address" id="address" cols="24" rows="8" class="form-control" placeholder="Enter your address" required></textarea>
+                           </div>
+                           <div class="container text-center my-3">
+                            <button class="btn btn-primary form-control">Add Student</button>
+                           </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
