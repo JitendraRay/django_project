@@ -4,40 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <title>Add Student</title>
+    <title>Update Student</title>
 </head>
 <body class="bg-secondary">
  {% include 'std/navbar.html'  %} 
-    <h1 class="text-center my-3 text-secondary-emphasis">Add New Stundets</h1>
+    <h1 class="text-center my-3 text-secondary-emphasis">Update Stundets</h1>
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="card bg-info">
                     <div class="card-body">
-                        <form action="add-std" method="POST">
+                        <form action="/do_edit-std/{{std.id}}" method="POST">
                             {% csrf_token %}
                            <div class="md-3">
                             <label for="roll">Roll No</label>
-                            <input type="text" name="std_roll" id="roll" class="form-control" placeholder="Enetr your roll" required>
+                            <input type="text" name="std_roll" id="roll" class="form-control" placeholder="Enetr your roll" value={{std.roll}} required>
                            </div>
                            <div class="md-3">
                             <label for="name">Name</label>
-                            <input type="text" name="std_name" id="name" class="form-control" placeholder="Enetr your name" required>
+                            <input type="text" name="std_name" id="name" class="form-control" placeholder="Enetr your name" value={{std.name}} required>
                            </div>
                            <div class="md-3">
                             <label for="email">Email</label>
-                            <input type="email" name="std_email" id="email" class="form-control" placeholder="Enetr your email" required>
+                            <input type="email" name="std_email" id="email" class="form-control" placeholder="Enetr your email" value={{std.email}} required>
                            </div>
                            <div class="md-3">
                             <label for="contact">Contact</label>
-                            <input type="text" name="std_contact" id="contact" class="form-control" placeholder="Enetr your contact" required>
+                            <input type="text" name="std_contact" id="contact" class="form-control" placeholder="Enetr your contact" value={{std.contact}} required>
                            </div>
                            <div class="md-3">
                             <label for="address">Address</label>
-                            <textarea name="std_address" id="address" cols="18" rows="6" class="form-control" placeholder="Enter your address" required></textarea>
+                            <textarea name="std_address" id="address" cols="18" rows="6" class="form-control" placeholder="Enter your address" required>{{std.address}}</textarea>
                            </div>
                            <div class="container text-center my-3">
-                            <button class="btn btn-primary form-control">Add Student</button>
+                            <button class="btn btn-success form-control">Update Student</button>
                            </div>
                         </form>
                     </div>
